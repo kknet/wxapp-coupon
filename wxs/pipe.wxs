@@ -1,0 +1,229 @@
+//对<10的数做0补偿
+var compensationZero = function (m) {
+  return m < 10 ? '0' + m : m
+}
+
+/**
+ * 保留两位小数
+ */
+function keep2decimal(number) {
+  return number.toFixed(2);// 输出结果为 2.45
+}
+
+
+/**
+ * 隐藏手机号
+ */
+function toHide(array) {
+  return array.substring(0, 3) + '****' + array.substring(7);
+}
+
+/**
+ * 隐藏身份证
+ */
+function concatIDCard(idcard) {
+  return idcard.substring(0, 3) + '***********' + idcard.substring(14);
+}
+
+/**
+ * 时间戳转时间格式
+ */
+function timestampToStandard(timestamp) {
+  var time = getDate(timestamp);
+  var year = time.getFullYear();
+  var month = time.getMonth() + 1;
+  var date = time.getDate();
+  var hour = time.getHours();
+  var minute = time.getMinutes();
+  var second = time.getSeconds();
+  month = month < 10 ? "0" + month : month;
+  date = date < 10 ? "0" + date : date;
+  hour = hour < 10 ? "0" + hour : hour;
+  minute = minute < 10 ? "0" + minute : minute;
+  second = second < 10 ? "0" + second : second;
+  return year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second;
+}
+
+/**
+ * 时间戳转时间格式
+ */
+function timestampToCommonly(timestamp) {
+  var time = getDate(timestamp);
+  var year = time.getFullYear();
+  var month = time.getMonth() + 1;
+  var date = time.getDate();
+  var hour = time.getHours();
+  var minute = time.getMinutes();
+  var second = time.getSeconds();
+  month = month < 10 ? "0" + month : month;
+  date = date < 10 ? "0" + date : date;
+  hour = hour < 10 ? "0" + hour : hour;
+  minute = minute < 10 ? "0" + minute : minute;
+  second = second < 10 ? "0" + second : second;
+  return y + '/' + compensationZero(m) + '/' + compensationZero(d) + ' ' + compensationZero(h) + ':' + compensationZero(mm) + ':' + compensationZero(s);
+}
+
+/**
+ * 时间戳转时间格式
+ */
+function timestampToSpecial(timestamp) {
+  var time = getDate(timestamp);
+  var year = time.getFullYear();
+  var month = time.getMonth() + 1;
+  var date = time.getDate();
+  var hour = time.getHours();
+  var minute = time.getMinutes();
+  var second = time.getSeconds();
+  month = month < 10 ? "0" + month : month;
+  date = date < 10 ? "0" + date : date;
+  hour = hour < 10 ? "0" + hour : hour;
+  minute = minute < 10 ? "0" + minute : minute;
+  second = second < 10 ? "0" + second : second;
+  return year + "年" + month + "月" + date + "日 " + hour + "时" + minute + "分" + second + "秒";
+}
+
+/**
+ * 时间戳格式转换
+ */
+function timeToDate(timestamp) {
+  var time = getDate(timestamp);
+  var year = time.getFullYear();
+  var month = time.getMonth() + 1;
+  var date = time.getDate();
+  var hour = time.getHours();
+  var minute = time.getMinutes();
+  var second = time.getSeconds();
+  month = month < 10 ? "0" + month : month;
+  date = date < 10 ? "0" + date : date;
+  hour = hour < 10 ? "0" + hour : hour;
+  minute = minute < 10 ? "0" + minute : minute;
+  second = second < 10 ? "0" + second : second;
+  return year + "/" + month + "/" + date + " " + hour + ":" + minute + ":" + second;
+}
+
+/**
+ * 时间戳格式转换
+ */
+function timestampToDate(timestamp) {
+  var time = getDate(timestamp * 1000);
+  var y = time.getFullYear();
+  var m = time.getMonth() + 1;
+  var d = time.getDate();
+  var h = time.getHours();
+  var mm = time.getMinutes();
+  var s = time.getSeconds();
+  return y + '-' + compensationZero(m) + '-' + compensationZero(d);
+}
+
+/**
+ * 时间戳格式转换
+ */
+function timestampToTime(timestamp) {
+  var time = getDate(timestamp * 1000);
+  var y = time.getFullYear();
+  var m = time.getMonth() + 1;
+  var d = time.getDate();
+  var h = time.getHours();
+  var mm = time.getMinutes();
+  var s = time.getSeconds();
+  return compensationZero(h) + ':' + compensationZero(mm) + ':' + compensationZero(s);
+}
+
+/**
+ * 时间倒计时插件
+ */
+function timestampDown(totalSeconds) {
+  //天数
+  var days = Math.floor(totalSeconds / (60 * 60 * 24));
+  //取模（余数）
+  var modulo = totalSeconds % (60 * 60 * 24);
+  //小时数
+  var hours = Math.floor(modulo / (60 * 60));
+  modulo = modulo % (60 * 60);
+  //分钟
+  var minutes = Math.floor(modulo / 60);
+  //秒
+  var seconds = modulo % 60;
+
+  return (days * 24 + hours) + "时" + minutes + "分" + seconds + "秒";
+}
+
+
+/**
+ * 日期数组转换成日期格式
+ */
+var strHandle = function(arr) {
+  if (typeof arr == 'string') {
+    return arr;
+  }
+  var str = ""
+  if (!arr) {
+    return "";
+  } else {
+    str = arr[0] + "-" + changeTime(arr[1]) + "-" + changeTime(arr[2]) + " " + 
+    changeTime(arr[3]) + ":" + changeTime(arr[4]) + ":" + changeTime(arr[5]);
+  }
+  return str;
+}
+
+var changeTime = function(str) {
+  str += "";
+  if (str && str.length == 1) {
+    str = "0" + str
+  }
+  return str;
+}
+
+
+/**
+ * 日期数组转换成日期格式
+ */
+var strHandleXie = function(arr) {
+  if (typeof arr == 'string') {
+    return arr;
+  }
+  var str = ""
+  if (!arr) {
+    return "";
+  } else {
+    str = arr[0] + "/" + changeTime(arr[1]) + "/" + changeTime(arr[2]) + " " + 
+    changeTime(arr[3]) + ":" + changeTime(arr[4]) + ":" + changeTime(arr[5]);
+  }
+  return str;
+}
+
+var changeTime = function(str) {
+  str += "";
+  if (str && str.length == 1) {
+    str = "0" + str
+  }
+  return str;
+}
+
+// 数组日期转时间戳
+var timestampFormatWidthList = function(arr){
+  if (typeof arr == 'string') {
+    return arr;
+  }
+  const date = this.strHandle(arr)
+  var timestamp = getDate(date).getTime();
+  return timestamp;
+}
+
+module.exports = {
+  keep2decimal: keep2decimal,//保留两位小数
+  toHide: toHide,//隐藏手机号
+  concatIDCard: concatIDCard,//隐藏身份证
+
+  timestampToStandard: timestampToStandard,
+  timestampToCommonly: timestampToCommonly,
+  timestampToSpecial: timestampToSpecial,
+  timestampToDate: timestampToDate,
+  timestampToTime: timestampToTime,
+  timestampDown: timestampDown,
+
+  timeToDate: timeToDate,
+  strHandle: strHandle,
+  strHandleXie: strHandleXie,
+  timestampFormatWidthList: timestampFormatWidthList
+}
