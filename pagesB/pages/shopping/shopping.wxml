@@ -15,7 +15,7 @@
 		action-style="{{searchActionStyle}}" action-text="搜索优惠券" input-style="position: relative;"
 		value="{{searchValue}}"
 		data-event-opts="{{[['^click',[['toSearch']]],['^input',[['__set_model',['','searchValue','$event',[]]]]]]}}"
-		bind:click="__e" bind:input="__e" class="data-v-24f06b86" bind:__l="__l"></u-search>
+		bindtap="toSearch" bind:input="__e" class="data-v-24f06b86" bind:__l="__l"></u-search>
 	<block wx:if="{{adOne}}">
 		<view style="text-align:center;" class="data-v-24f06b86">
 			<image class="ad-image data-v-24f06b86" src="{{adOne.src}}" mode="widthFix"

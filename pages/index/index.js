@@ -339,7 +339,7 @@
                             })) : -1 == a.url.indexOf("../../pagesA/pages/movieA/") && -1 == a.url.indexOf("../../pagesA/pages/shopA/") && -1 == a.url.indexOf("../../pagesA/pages/meituan/") && -1 == a.url.indexOf("../../pagesA/pages/elm/") && -1 == a.url.indexOf("../../pagesA/pages/eat/") && -1 == a.url.indexOf("../../pagesA/pages/userA/") && (-1 != a.url.indexOf("../meituan/") || -1 != a.url.indexOf("../elm/") || -1 != a.url.indexOf("../eat/")) ? (n = a.url.replace("../", "../../pagesA/pages/"), 
                             void r.navigateTo({
                                 url: n
-                            })) : -1 == a.url.indexOf("../shoping/shoping/") ? (n = a.url.replace("../", "../../pagesB/pages/"), 
+                            })) : -1 == a.url.indexOf("../shopping/shopping") ? (n = a.url.replace("../", "../../pagesB/pages/"), 
                             void r.navigateTo({
                                 url: n
                             })) : void r.navigateTo({

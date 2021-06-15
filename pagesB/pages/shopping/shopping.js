@@ -374,7 +374,7 @@ Page({
  	},
  	toSearch() {
 		wx.navigateTo({
-			url: '../pages/HM-search/HM-search'
+			url: '../HM-search/HM-search'
 		})
  	},
  	goDetail(data){

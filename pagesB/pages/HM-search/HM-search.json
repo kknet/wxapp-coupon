@@ -1,5 +1,7 @@
 {
   "navigationBarTitleText": "搜索宝贝",
+  "navigationBarBackgroundColor": "#f8f8f8",
+  "navigationBarTextStyle": "black",
   "usingComponents": {
     "m-search": "/components/mehaotian-search-revision/mehaotian-search-revision"
   }
