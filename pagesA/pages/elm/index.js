@@ -267,7 +267,6 @@ require("../../common/vendor.js"), (global.webpackJsonp = global.webpackJsonp ||
                 methods: {
                     change: function(e) {
                         var t = this;
-                        console.log(this.tabBar.list), console.log(this.tabBar.list[e]);
                         var a = this.tabBar.list[e];
                         if (this.pageKey = e, r.setStorageSync("pageKey", e), r.getStorageSync("userinfo").nickname || 1 != r.getStorageSync("setting").login_type) {
                             if (1 == a.adtype) {
@@ -345,6 +344,11 @@ require("../../common/vendor.js"), (global.webpackJsonp = global.webpackJsonp ||
                                 url: "../kefu/webview?return_url=" + encodeURIComponent(a.url)
                             });
                         } else this.showDialog2();
+						if (a.url.indexOf('shopping/shopping') != -1) {
+							r.navigateTo({
+							    url: '/pagesB/pages/shopping/shopping'
+							})
+						}
                     },
                     fatherHeight: function(e) {
                         this.height = e;
@@ -370,6 +374,7 @@ require("../../common/vendor.js"), (global.webpackJsonp = global.webpackJsonp ||
                         }));
                     },
                     loadsetting: function() {
+						console.log(i);
                         var t = this, e = i.globalData.util.url("entry/wxapp/api", {
                             m: i.globalData.module_name,
                             o: "setting"

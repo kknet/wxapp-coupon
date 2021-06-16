@@ -215,6 +215,11 @@
                         } else i.navigateTo({
                             url: "../kefu/webview?return_url=" + encodeURIComponent(a.url)
                         });
+						if (a.url.indexOf('shopping/shopping') != -1) {
+							r.navigateTo({
+							    url: '../../pagesB/pages/shopping/shopping'
+							})
+						}
                     },
                     fatherHeight: function(t) {
                         this.height = t;

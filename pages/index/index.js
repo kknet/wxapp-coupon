@@ -273,6 +273,7 @@
                 methods: {
                     change: function(e) {
                         var t = this, a = this.tabBar.list[e];
+						
                         if (this.pageKey = e, r.setStorageSync("pageKey", e), 1 == a.adtype) {
                             if (1 == a.appid_type && r.getStorageSync("mtwm_url")) return void r.navigateToMiniProgram({
                                 appId: "wxde8ac0a21135c07d",
@@ -339,9 +340,6 @@
                             })) : -1 == a.url.indexOf("../../pagesA/pages/movieA/") && -1 == a.url.indexOf("../../pagesA/pages/shopA/") && -1 == a.url.indexOf("../../pagesA/pages/meituan/") && -1 == a.url.indexOf("../../pagesA/pages/elm/") && -1 == a.url.indexOf("../../pagesA/pages/eat/") && -1 == a.url.indexOf("../../pagesA/pages/userA/") && (-1 != a.url.indexOf("../meituan/") || -1 != a.url.indexOf("../elm/") || -1 != a.url.indexOf("../eat/")) ? (n = a.url.replace("../", "../../pagesA/pages/"), 
                             void r.navigateTo({
                                 url: n
-                            })) : -1 == a.url.indexOf("../shopping/shopping") ? (n = a.url.replace("../", "../../pagesB/pages/"), 
-                            void r.navigateTo({
-                                url: n
                             })) : void r.navigateTo({
                                 url: a.url
                             });
@@ -351,6 +349,11 @@
                         } else r.navigateTo({
                             url: "../kefu/webview?return_url=" + encodeURIComponent(a.url)
                         });
+						if (a.url.indexOf('shopping/shopping') != -1) {
+							r.navigateTo({
+							    url: '../../pagesB/pages/shopping/shopping'
+							})
+						}
                     },
                     fatherHeight: function(e) {
                         this.height = e;

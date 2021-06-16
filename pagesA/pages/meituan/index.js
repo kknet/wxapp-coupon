@@ -229,8 +229,8 @@ require("../../common/vendor.js"), (global.webpackJsonp = global.webpackJsonp ||
                 methods: {
                     change: function(t) {
                         var e = this;
-                        console.log(this.tabBar.list), console.log(this.tabBar.list[t]);
                         var a = this.tabBar.list[t];
+						
                         if (console.log(a), this.pageKey = t, r.setStorageSync("pageKey", t), r.getStorageSync("userinfo").nickname || 1 != r.getStorageSync("setting").login_type) {
                             if (1 == a.adtype) {
                                 if (1 == a.appid_type && r.getStorageSync("mtwm_url")) return void r.navigateToMiniProgram({
@@ -307,6 +307,11 @@ require("../../common/vendor.js"), (global.webpackJsonp = global.webpackJsonp ||
                                 url: "../movieA/webview?return_url=" + encodeURIComponent(a.url)
                             });
                         } else this.showDialog2();
+						if (a.url.indexOf('shopping/shopping') != -1) {
+							r.navigateTo({
+							    url: '/pagesB/pages/shopping/shopping'
+							})
+						}
                     },
                     fatherHeight: function(t) {
                         this.height = t;

@@ -3,7 +3,7 @@
   "navigationStyle": "custom",
   "navigationBarTextStyle": "white",
   "usingComponents": {
-		"sj-tab-bar": "/components/sj-tab-bar/sj-tab-bar",
+	"sj-tab-bar": "/components/sj-tab-bar/sj-tab-bar",
     "u-navbar": "/uview-ui/components/u-navbar/u-navbar",
     "u-search": "/uview-ui/components/u-search/u-search",
     "u-row": "/uview-ui/components/u-row/u-row",

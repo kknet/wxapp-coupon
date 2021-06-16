@@ -15,11 +15,11 @@
 		action-style="{{searchActionStyle}}" action-text="搜索优惠券" input-style="position: relative;"
 		value="{{searchValue}}"
 		data-event-opts="{{[['^click',[['toSearch']]],['^input',[['__set_model',['','searchValue','$event',[]]]]]]}}"
-		bindtap="toSearch" bind:input="__e" class="data-v-24f06b86" bind:__l="__l"></u-search>
+		bind:click="__e" bind:input="__e" class="data-v-24f06b86" bind:__l="__l"></u-search>
 	<block wx:if="{{adOne}}">
 		<view style="text-align:center;" class="data-v-24f06b86">
 			<image class="ad-image data-v-24f06b86" src="{{adOne.src}}" mode="widthFix"
-				data-item="{{adOne.item}}" bindtap="toPath"></image>
+				data-event-opts="{{[['tap',[['toPath',['$0'],['adOne.item']]]]]}}" bindtap="__e"></image>
 		</view>
 	</block>
 	<block wx:if="{{features}}">
@@ -29,7 +29,8 @@
 					<block wx:for="{{features}}" wx:for-item="item" wx:for-index="index" wx:key="index">
 						<view class="section-bottom-item data-v-24f06b86">
 							<image src="{{item.src}}" mode="aspectFit"
-								data-item="{{item}}" bindtap="toPath" class="data-v-24f06b86"></image>
+								data-event-opts="{{[['tap',[['toPath',['$0'],[[['features','',index]]]]]]]}}"
+								bindtap="__e" class="data-v-24f06b86"></image>
 						</view>
 					</block>
 				</scroll-view>
@@ -39,67 +40,67 @@
 	<block wx:if="{{bigAdImges}}">
 		<view class="tx-wrap data-v-24f06b86">
 			<image class="first-image data-v-24f06b86" src="{{bigAdImges[0].src}}" mode="widthFix"
-				data-item="{{bigAdImges[0]}}" bindtap="toPath"></image>
+				data-event-opts="{{[['tap',[['toPath',['$0'],['bigAdImges.__$n0']]]]]}}" bindtap="__e"></image>
 			<image class="second-image data-v-24f06b86" src="{{bigAdImges[1].src}}" mode="widthFix"
-				data-item="{{bigAdImges[1]}}" bindtap="toPath"></image>
+				data-event-opts="{{[['tap',[['toPath',['$0'],['bigAdImges.__$n1']]]]]}}" bindtap="__e"></image>
 			<image class="third-image data-v-24f06b86" src="{{bigAdImges[2].src}}" mode="widthFix"
-				data-item="{{bigAdImges[2]}}" bindtap="toPath"></image>
+				data-event-opts="{{[['tap',[['toPath',['$0'],['bigAdImges.__$n2']]]]]}}" bindtap="__e"></image>
 		</view>
 	</block>
 	<block wx:if="{{adSecond}}">
 		<view style="text-align:center;" class="data-v-24f06b86">
 			<image class="ad-image data-v-24f06b86" src="{{adSecond.src}}" mode="widthFix"
-				data-item="{{adSecond.item}}" bindtap="toPath"></image>
+				data-event-opts="{{[['tap',[['toPath',['$0'],['adSecond.item']]]]]}}" bindtap="__e"></image>
 		</view>
 	</block>
 	<view class="sell-wrap data-v-24f06b86">
 		<u-row vue-id="791d8640-3" gutter="{{100}}" class="data-v-24f06b86" bind:__l="__l" vue-slots="{{['default']}}">
 			<u-col vue-id="{{('791d8640-4')+','+('791d8640-3')}}" span="{{4}}" class="data-v-24f06b86" bind:__l="__l"
 				vue-slots="{{['default']}}">
-				<view data-item="pdd" class="type-title data-v-24f06b86"
-					bindtap="switchCpType">拼多多</view>
-				<view class="{{['type-desc data-v-24f06b86',(cpType=='pdd')?'active':'']}}">精选宝贝</view>
+				<view data-event-opts="{{[['tap',[['switchCpType',['pdd']]]]]}}" class="type-title data-v-24f06b86"
+					bindtap="__e">拼多多</view>
+				<view class="{{['type-desc data-v-24f06b86',(queryParams.cpType=='pdd')?'active':'']}}">精选宝贝</view>
 			</u-col>
 			<u-col vue-id="{{('791d8640-5')+','+('791d8640-3')}}" span="{{4}}" class="data-v-24f06b86" bind:__l="__l"
 				vue-slots="{{['default']}}">
-				<view data-item="jd" class="type-title data-v-24f06b86"
-					bindtap="switchCpType">京东</view>
-				<view class="{{['type-desc data-v-24f06b86',(cpType=='jd')?'active':'']}}">件件必抢</view>
+				<view data-event-opts="{{[['tap',[['switchCpType',['jd']]]]]}}" class="type-title data-v-24f06b86"
+					bindtap="__e">京东</view>
+				<view class="{{['type-desc data-v-24f06b86',(queryParams.cpType=='jd')?'active':'']}}">件件必抢</view>
 			</u-col>
 			<u-col vue-id="{{('791d8640-6')+','+('791d8640-3')}}" span="{{4}}" class="data-v-24f06b86" bind:__l="__l"
 				vue-slots="{{['default']}}">
-				<view data-item="wph" class="type-title data-v-24f06b86"
-					bindtap="switchCpType">唯品会</view>
-				<view class="{{['type-desc data-v-24f06b86',(cpType=='wph')?'active':'']}}">品牌特卖</view>
+				<view data-event-opts="{{[['tap',[['switchCpType',['wph']]]]]}}" class="type-title data-v-24f06b86"
+					bindtap="__e">唯品会</view>
+				<view class="{{['type-desc data-v-24f06b86',(queryParams.cpType=='wph')?'active':'']}}">品牌特卖</view>
 			</u-col>
 		</u-row>
 	</view>
-	<view class="item-list data-v-24f06b86">
+	<view class="item-list data-v-24f06b86" style="{{'margin-bottom: '+bottomHe+'px;'}}">
 		<block wx:if="{{list&&list.length}}">
 			<block class="data-v-24f06b86">
-				<block wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="index">
-					<view data-item="{{item}}"
-						class="item-item data-v-24f06b86" bindtap="goDetail">
+				<block wx:for="{{$root.l0}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+					<view data-event-opts="{{[['tap',[['goDetail',['$0'],[[['list','',index]]]]]]]}}"
+						class="item-item data-v-24f06b86" bindtap="__e">
 						<u-lazy-load class="item-thumbnail data-v-24f06b86" vue-id="{{'791d8640-7-'+index}}"
-							image="{{item.img}}" threshold="300" bind:__l="__l"></u-lazy-load>
+							image="{{item.$orig.img}}" threshold="300" bind:__l="__l"></u-lazy-load>
 						<image class="item-shop-type data-v-24f06b86" src="{{shopTypeIcon}}"></image>
-						<view class="item-title data-v-24f06b86">{{item.goodsName}}</view>
+						<view class="item-title data-v-24f06b86">{{item.$orig.goodsName}}</view>
 						<view class="item-price-box data-v-24f06b86">
 							<view class="item-price-prefix data-v-24f06b86">￥</view>
-							<view class="item-price data-v-24f06b86">{{item.priceAfter}}</view>
+							<view class="item-price data-v-24f06b86">{{item.m0}}</view>
 						</view>
-						<block wx:if="{{item.discount>0}}">
+						<block wx:if="{{item.$orig.discount>0}}">
 							<view class="item-coupon-box data-v-24f06b86">
 								<image style="width:100%;height:100%;" src="../../static/shop/img_coupon.png"
 									class="data-v-24f06b86"></image>
 								<view class="item-coupon-prefix data-v-24f06b86">券</view>
-								<view class="item-coupon-price data-v-24f06b86">{{item.discount}}</view>
+								<view class="item-coupon-price data-v-24f06b86">{{item.m1}}</view>
 							</view>
 						</block>
 						<view class="item-line data-v-24f06b86"></view>
-						<view class="item-price-origin data-v-24f06b86">{{"￥"+item.price}}</view>
-						<block wx:if="{{item.sales}}">
-							<view class="item-sale data-v-24f06b86">{{"已售"+(item.sales||0)+"笔"}}</view>
+						<view class="item-price-origin data-v-24f06b86">{{"￥"+item.m2}}</view>
+						<block wx:if="{{item.$orig.sales}}">
+							<view class="item-sale data-v-24f06b86">{{"已售"+(item.$orig.sales||0)+"笔"}}</view>
 						</block>
 						<view class="item-money-earn data-v-24f06b86" style="background-color:#FFE262;color:#2D2D2D;">
 							领券下单</view>
@@ -117,6 +118,5 @@
 			</block>
 		</block>
 	</view>
-	<sj-tab-bar bind:__l="__l" bind:change="__e" bind:fatherHeight="__e" ckey="{{pageKey}}" data-event-opts="{{[ [ '^fatherHeight',[ ['fatherHeight'] ] ],[ '^change',[ ['change'] ] ] ]}}" mode="1" tabBar="{{tabBar}}" vueId="5527a673-5"></sj-tab-bar>
-	
+	<sj-tab-bar bind:__l="__l" bind:change="__e" bind:fatherHeight="__e" ckey="{{pageKey}}" data-event-opts="{{[ [ '^fatherHeight',[ ['fatherHeight'] ] ],[ '^change',[ ['change'] ] ] ]}}" mode="1" tabBar="{{tabBar}}" vueId="791d8640-10" wx:if="{{tabBar}}"></sj-tab-bar>
 </view>

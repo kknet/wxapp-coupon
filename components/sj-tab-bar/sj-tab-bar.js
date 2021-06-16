@@ -31,7 +31,7 @@
             Object.defineProperty(a, "__esModule", {
                 value: !0
             }), a.default = void 0;
-            var e = {
+            var app = getApp(), e = {
                 data: function() {
                     return {
                         curKey: ""
@@ -62,14 +62,15 @@
                 },
                 methods: {
                     NavChange: function(t) {
-                        console.log(t), n.curKey = t, n.$emit("change", t);
+                        console.log(t), n.curKey = t, n.$emit("change", t,app);
                     },
                     getContentHeight: function() {
                         t.getSystemInfo({
                             success: function(e) {
                                 t.createSelectorQuery().in(n).select(".cu-bar").boundingClientRect(function(t) {
-                                    null != t ? (t = e.windowHeight - t.top, n.height = "height:" + (e.windowHeight - t) + "px", 
-                                    n.$emit("fatherHeight", n.height)) : n.getContentHeight();
+									let ll = 0;
+                                    null != t ? (ll = t.height,t = e.windowHeight - t.top, n.height = "height:" + (e.windowHeight - t) + "px", 
+                                    n.$emit("fatherHeight", n.height,ll)) : n.getContentHeight();
                                 }).exec();
                             },
                             fail: function(t) {
